@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import Profile from './component/Profile'
 import './App.css';
+import Counter from './component/Counter';
+
 
 class App extends Component {
     
@@ -19,25 +21,35 @@ class App extends Component {
     
     render() {
         return (
-          <div className='tg'>
+          
            
-            <div className="App-intro">
-                <br />
-                <button onClick={ this.toggleDiv }>Toggle</button>
-                <br /><br />
-                { this.state.show && <Box /> }
-            </div>
-          </div>
+           <div className='AP'>
+           
+          
+               <br />
+               <button className='BT' onClick={ this.toggleDiv }>Toggle</button>
+               <br /><br />
+               { this.state.show && <Box /> }
+          
+           
+         </div>
+            
+          
         );
     }
 }
 
 class Box extends Component{
     render(){
-        return(
-          <div className="App">
-          <Profile fullname={'BENAMOR ISLEM'} bio={'WEB DEVELOPER'} profession={'Student'} /> </div>
-        )
+      const handleName = fullname => alert(fullname)
+      return (
+        <div className='App'>
+          <Profile fullname={'BENAMOR ISLEM'} bio={'WEB DEVELOPER'} profession={'Student'} handleName={handleName}/>
+          
+            <Counter/>
+          
+        </div>
+     );
     }
 }
 
